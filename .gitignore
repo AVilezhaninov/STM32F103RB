@@ -1,0 +1,24 @@
+# \EWARM folder
+*.dep
+*.ewt
+
+# \EWARM\Debug folder
+*.dep
+*.hex
+*.out
+*.o
+*.map
+*.pbd
+*.browse
+*.pbi
+*.cout
+
+# \EWARM\settings folder
+*.crun
+*.dbgdt
+*.bat
+*.xcl
+*.dni
+*.wsdt
+*.wspos
+
