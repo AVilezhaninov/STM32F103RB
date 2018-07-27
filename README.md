@@ -8,9 +8,10 @@ Templates, examples and projects for STM32F103RB.
   - **03_RCC_HSE_TIM3_PWM_LED_blinking**: RCC config with HSE and PLL for 72 MHz frequency, and TIM3 PWM LED blinking;
   - **04_FreeRTOS_LED_blinking**: FreeRTOS project setup and LED blinking from task;
   - **05_Unique_ID**: reading STM32F103 unique ID;
+  - **06_USART_echo**: simple USART echo project;
 
 ## Versions
-  - IAR EWARM v7.50;
+  - IAR EWARM v8.20;
   - CMSIS 4.5.0;
 
 ## Licence
