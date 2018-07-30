@@ -9,6 +9,7 @@ Templates, examples and projects for STM32F103RB.
   - **04_FreeRTOS_LED_blinking**: FreeRTOS project setup and LED blinking from task;
   - **05_Unique_ID**: reading STM32F103 unique ID;
   - **06_USART_echo**: simple USART echo project;
+  - **07_SPI_polling_loopback**: SPI polling loopback;
 
 ## Versions
   - IAR EWARM v8.20;
