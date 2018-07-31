@@ -2,7 +2,7 @@
 
 
 /******************************************************************************/
-/* Define *********************************************************************/
+/* Definitions ****************************************************************/
 /******************************************************************************/
 #define AHB_PRESCALER           RCC_CFGR_HPRE_DIV1
 #define APB1_PRESCALER          RCC_CFGR_PPRE1_DIV2
@@ -18,10 +18,10 @@ void SystemClock_Init(void) {
     uint32_t StartUpCounter = 0u;
     uint32_t HSEStatus = 0u;
 
-    /* Enable HSI */
+    /* Enable HSE */
     RCC->CR |= RCC_CR_HSEON;
 
-    /* Wait till HSI is ready and exit if timeout is reached */
+    /* Wait till HSE is ready and exit if timeout is reached */
     while ((HSEStatus == 0u) && (StartUpCounter < HSE_STARTUP_TIMEOUT)) {
         HSEStatus = RCC->CR & RCC_CR_HSERDY;
         ++StartUpCounter;
@@ -44,7 +44,7 @@ void SystemClock_Init(void) {
         /* PCLK1 */
         RCC->CFGR |= (uint32_t)APB1_PRESCALER;
 
-        /* PLL configuration: PLLCLK = HSE * 9 = 72 MHz */        
+        /* PLL configuration: PLLCLK = HSE * 9 = 72 MHz */
         RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC);
         RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLMULL9);
 
