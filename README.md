@@ -6,9 +6,11 @@ Templates and examples for STM32F103RB MCU.
   - **02_HSI_PLL**: config SYSCLK for 64 MHz with HSI and PLL
   - **03_HSE_PLL**: config SYSCLK for 72 MHz with HSE and PLL
   - **04_FreeRTOS**: the simplest FreeRTOS project with LED blinking
-  - **05_Unique_ID**: reading STM32F103 unique ID
-  - **06_USART_echo**: simple USART echo project
+  - **05_USART_echo**: all USARTs echo from ISR
   - **07_SPI_polling_loopback**: SPI polling loopback
+
+  - **55_Unique_ID**: reading STM32F103 unique ID
+
 
 ## Versions
   - IAR EWARM: v8.20
