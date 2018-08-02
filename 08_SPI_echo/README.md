@@ -1,7 +1,13 @@
-## SPI polling loopback
-Template project for STM32F103RB, with SPI polling loopback.
+## SPI loop
 
-Using CMSIS only.
+All SPIs send data from "main" and receive them in corresponding IRQ.
+
+## Features
+ - Clock source: HSE
+ - SYSCLK: 72 MHz
+ - APB1: 36 MHz
+ - APB2: 72 MHz
+ - CMSIS only
 
 ## Licence
 MIT Licence

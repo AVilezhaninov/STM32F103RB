@@ -10,7 +10,7 @@ Templates and examples for STM32F103RB MCU.
   - **05_USART_echo**: all USARTs echo from ISR
   - **06_TIM_base**: all TIMs time based interval interrupts
   - **07_TIM_PWM**: all TIMs configure to generate PWM signal
-  - **08_SPI_echo**: all SPIs echo from ISR
+  - **08_SPI_loop**: all SPIs send and receive data
 
   - **55_Unique_ID**: reading STM32F103 unique ID
 
