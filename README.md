@@ -1,4 +1,5 @@
 ## STM32F103RB
+
 Templates and examples for STM32F103RB MCU.
 
 ## List
@@ -8,7 +9,8 @@ Templates and examples for STM32F103RB MCU.
   - **04_FreeRTOS**: the simplest FreeRTOS project with LED blinking
   - **05_USART_echo**: all USARTs echo from ISR
   - **06_TIM_base**: all TIMs time based interval interrupts
-  - **07_SPI_polling_loopback**: SPI polling loopback
+  - **07_TIM_PWM**: all TIMs configure to generate PWM signal
+  - **08_SPI_echo**: all SPIs echo from ISR
 
   - **55_Unique_ID**: reading STM32F103 unique ID
 
