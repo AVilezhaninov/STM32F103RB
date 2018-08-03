@@ -11,6 +11,7 @@ Templates and examples for STM32F103RB MCU.
   - **06_TIM_base**: all TIMs time based interval interrupts
   - **07_TIM_PWM**: all TIMs configure to generate PWM signal
   - **08_SPI_loop**: all SPIs send and receive data
+  - **09_CAN_loop**: CAN sends data and receives it in loopback mode
 
   - **55_Unique_ID**: reading STM32F103 unique ID
 
