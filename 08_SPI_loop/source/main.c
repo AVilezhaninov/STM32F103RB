@@ -66,7 +66,7 @@ int main(void) {
         SPI1->DR = spi_data;    /* Send data through SPI1 */
 
         SPI2_CSReset();
-        SPI2->DR = spi_data;    /* Send data through SPI1 */
+        SPI2->DR = spi_data;    /* Send data through SPI2 */
 
 
         ++spi_data;
@@ -82,17 +82,17 @@ static void SPI1_Init(void) {
     /* Enable clocks */
     RCC->APB2ENR |= RCC_APB2ENR_IOPAEN; /* Enable GPIOA clock */
 
-    /* SPI2 SCK pin init */
+    /* SPI1 SCK pin init */
     GPIOA->CRL &= ~GPIO_CRL_CNF5;       /* Clear bits */
     GPIOA->CRL |= GPIO_CRL_CNF5_1;      /* AF output push-pull */
     GPIOA->CRL |= GPIO_CRL_MODE5;       /* Output mode 50 Mhz */
 
-    /* SPI2 MISO pin init in AF mode */
+    /* SPI1 MISO pin init in AF mode */
     GPIOA->CRL &= ~GPIO_CRL_CNF6;       /* Clear bits */
     GPIOA->CRL |= GPIO_CRL_CNF6_0;      /* Floating input */
     GPIOA->CRL &= ~GPIO_CRL_MODE6;      /* Input mode */
 
-    /* SPI2 MOSI pin init */
+    /* SPI1 MOSI pin init */
     GPIOA->CRL &= ~GPIO_CRL_CNF7;       /* Clear bits */
     GPIOA->CRL |= GPIO_CRL_CNF7_1;      /* AF output push-pull */
     GPIOA->CRL |= GPIO_CRL_MODE7;       /* Output mode 50 Mhz */
