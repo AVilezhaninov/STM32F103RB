@@ -4,7 +4,6 @@
 /* FreeRTOS */
 #include "FreeRTOS.h"
 #include "task.h"
-#include "semphr.h"
 
 /* User */
 #include "RCC.h"
