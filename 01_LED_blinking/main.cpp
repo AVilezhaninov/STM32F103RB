@@ -1,57 +1,47 @@
 /* CMSIS */
-#include "stm32f103xb.h"
-
-
-/******************************************************************************/
-/* Definitions ****************************************************************/
-/******************************************************************************/
-#define LED_TOGGLE_DELAY    500000u
-
+#include "CMSIS\Device\stm32f103xb.h"
 
 /******************************************************************************/
-/* Static function prototypes *************************************************/
+/* Private definitions ********************************************************/
 /******************************************************************************/
-static void GPIO_Init(void);
+#define LED_TOGGLE_DELAY 500000u
+
+/******************************************************************************/
+/* Private function prototypes ************************************************/
+/******************************************************************************/
+static void InitGpio(void);
 static void ToggleLed(void);
 static void DummyDelay(const int delay);
-
-
-
 
 /******************************************************************************/
 /* Main ***********************************************************************/
 /******************************************************************************/
 int main(void) {
-    GPIO_Init();
+  InitGpio();
 
-    while (1) {
-        ToggleLed();
-        DummyDelay(LED_TOGGLE_DELAY);
-    }
+  while (1) {
+    ToggleLed();
+    DummyDelay(LED_TOGGLE_DELAY);
+  }
 }
 
-
-
-
 /******************************************************************************/
-/* Static functions ***********************************************************/
+/* Private functions **********************************************************/
 /******************************************************************************/
-static void GPIO_Init(void) {
-    RCC->APB2ENR |= RCC_APB2ENR_IOPCEN; /* Enable GPIOC clock */
+static void InitGpio(void) {
+  RCC->APB2ENR |= RCC_APB2ENR_IOPCEN; /* Enable GPIO clock */
 
-    /* GPIOC pin 8 in push-pull mode */
-    GPIOC->CRH &= ~GPIO_CRH_CNF8;       /* Output push-pull mode */
-    GPIOC->CRH |= GPIO_CRH_MODE8_1;     /* Output mode 2 MHz */
+  /* GPIOC pin 8 in push-pull mode */
+  GPIOC->CRH &= ~GPIO_CRH_CNF8;       /* Output push-pull mode */
+  GPIOC->CRH |= GPIO_CRH_MODE8_1;     /* Output mode 2 MHz */
 }
-
 
 static void ToggleLed(void) {
-    GPIOC->ODR ^= GPIO_ODR_ODR8;        /* Toggle GPIOC pin 8 */
+  GPIOC->ODR ^= GPIO_ODR_ODR8;        /* Toggle GPIOC pin 8 */
 }
 
-
 static void DummyDelay(const int delay) {
-    for (volatile int i = 0; i < delay; ++i) {
-        ;
-    }
+  for (volatile int i = 0; i < delay; ++i) {
+    ;
+  }
 }
