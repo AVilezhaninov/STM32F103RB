@@ -1,17 +1,16 @@
 /* CMSIS */
-#include "stm32f103xb.h"
+#include "CMSIS\Device\stm32f103xb.h"
 
 /* User */
-#include "RCC.h"
-
+#include "user\RCC.h"
 
 /******************************************************************************/
 /* Main ***********************************************************************/
 /******************************************************************************/
-int main(void) {
-    SystemClock_Init(); /* Config SYSCLK for 72 MHz with HSE and PLL */
+int main() {
+  rcc::InitSystemClock(); /* Config SYSCLK for 64 MHz with HSI and PLL */
 
-    while (1) {
-
-    }
+  while (1) {
+    ;
+  }
 }
