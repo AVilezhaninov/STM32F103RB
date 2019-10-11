@@ -4,19 +4,19 @@
 /******************************************************************************/
 /* Private definitions ********************************************************/
 /******************************************************************************/
-#define LED_TOGGLE_DELAY 500000u
+#define LED_TOGGLE_DELAY 1000000u
 
 /******************************************************************************/
 /* Private function prototypes ************************************************/
 /******************************************************************************/
-static void InitGpio(void);
-static void ToggleLed(void);
-static void DummyDelay(const int delay);
+static void InitGpio();
+static void ToggleLed();
+static void DummyDelay(volatile int delay);
 
 /******************************************************************************/
 /* Main ***********************************************************************/
 /******************************************************************************/
-int main(void) {
+int main() {
   InitGpio();
 
   while (1) {
@@ -28,7 +28,7 @@ int main(void) {
 /******************************************************************************/
 /* Private functions **********************************************************/
 /******************************************************************************/
-static void InitGpio(void) {
+static void InitGpio() {
   RCC->APB2ENR |= RCC_APB2ENR_IOPCEN; /* Enable GPIO clock */
 
   /* GPIOC pin 8 in push-pull mode */
@@ -36,12 +36,12 @@ static void InitGpio(void) {
   GPIOC->CRH |= GPIO_CRH_MODE8_1;     /* Output mode 2 MHz */
 }
 
-static void ToggleLed(void) {
+static void ToggleLed() {
   GPIOC->ODR ^= GPIO_ODR_ODR8;        /* Toggle GPIOC pin 8 */
 }
 
-static void DummyDelay(const int delay) {
-  for (volatile int i = 0; i < delay; ++i) {
+static void DummyDelay(volatile int delay) {
+  while (delay-- > 0) {
     ;
   }
 }

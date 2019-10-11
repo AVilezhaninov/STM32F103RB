@@ -12,7 +12,6 @@ of clock configuration.
 
 ## Versions
   - IAR EWARM: v8.20
-  - CMSIS: 4.5.0
 
 ## Licence
 MIT Licence

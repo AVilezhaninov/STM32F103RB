@@ -17,7 +17,6 @@ Templates and examples for STM32F103RB MCU.
 
 ## Versions
   - IAR EWARM: v8.20
-  - CMSIS: 4.5.0
   - FreeRTOS v10.0.0
 
 ## Licence
