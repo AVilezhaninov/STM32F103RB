@@ -5,12 +5,10 @@ namespace rcc {
 /******************************************************************************/
 /* Private definitions ********************************************************/
 /******************************************************************************/
-#define AHB_PRESCALER           RCC_CFGR_HPRE_DIV1
-#define APB1_PRESCALER          RCC_CFGR_PPRE1_DIV2
-#define APB2_PRESCALER          RCC_CFGR_PPRE2_DIV1
-
-#define HSE_STARTUP_TIMEOUT     0x5000u
-
+#define AHB_PRESCALER         RCC_CFGR_HPRE_DIV1
+#define APB1_PRESCALER        RCC_CFGR_PPRE1_DIV2
+#define APB2_PRESCALER        RCC_CFGR_PPRE2_DIV1
+#define HSE_STARTUP_TIMEOUT   0x5000u
 
 /******************************************************************************/
 /* Exported functions *********************************************************/
@@ -29,7 +27,7 @@ void InitSystemClock() {
   }
 
   if (HSEStatus == RCC_CR_HSERDY) {
-    /* Enable Prefetch Buffer */
+    /* Enable prefetch buffer */
     FLASH->ACR |= FLASH_ACR_PRFTBE;
 
     /* Flash 2 wait state */
@@ -91,24 +89,10 @@ uint32_t GetPCLK2Frequency() {
 }
 
 /**
- * Blocking delay in us
- * @param delay [us]
+ * Blocking delay
+ * @param delay
  */
-void StupidDelay_us(volatile uint32_t delay) {
-  delay *= (SystemCoreClock / 1000000u);
-
-  while (delay-- > 0u) {
-    ;
-  }
-}
-
-/**
- * Blocking delay in ms
- * @param delay [ms]
- */
-void StupidDelay_ms(volatile uint32_t delay) {
-  delay *= (SystemCoreClock / 1000u);
-
+void StupidDelay(volatile uint32_t delay) {
   while (delay-- > 0u) {
     ;
   }

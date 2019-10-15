@@ -8,7 +8,7 @@
 /* Main ***********************************************************************/
 /******************************************************************************/
 int main() {
-  rcc::InitSystemClock(); /* Config SYSCLK for 64 MHz with HSI and PLL */
+  rcc::InitSystemClock(); /* Config SYSCLK for 72 MHz with HSE and PLL */
 
   while (1) {
     ;
