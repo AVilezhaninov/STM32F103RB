@@ -15,8 +15,7 @@ uint32_t GetHCLKFrequency();
 uint32_t GetPCLK1Frequency();
 uint32_t GetPCLK2Frequency();
 
-void StupidDelay_us(volatile uint32_t delay);
-void StupidDelay_ms(volatile uint32_t delay);
+void StupidDelay(volatile uint32_t delay);
 
 } /* namespace rcc */
 
